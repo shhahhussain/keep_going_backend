@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify, current_app
-from models import db, User
-from scheduler import scheduler
-from whatsapp_utils import send_whatsapp_message
+from .models import db, User
+from .scheduler import scheduler
+from .whatsapp_utils import send_whatsapp_message
 from datetime import datetime, timedelta
 import random
 

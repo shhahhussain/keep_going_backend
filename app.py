@@ -1,8 +1,8 @@
 import os
 from flask import Flask
 from dotenv import load_dotenv
-from models import db
-from scheduler import scheduler
+from .models import db
+from .scheduler import scheduler
 
 load_dotenv()
 
@@ -13,7 +13,7 @@ def create_app():
     db.init_app(app)
     scheduler.init_app(app)
     scheduler.start()
-    from routes import bp
+    from .routes import bp
     app.register_blueprint(bp)
     return app
 
