@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: keep-going-api
+    env: python
+    buildCommand: ""
+    startCommand: ./start.sh
+    autoDeploy: true

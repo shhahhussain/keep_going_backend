@@ -1,5 +1,3 @@
-Flask
-Flask-SQLAlchemy
-Flask-APScheduler
-python-dotenv
-requests 
+flask
+twilio
+gunicorn

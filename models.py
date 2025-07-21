@@ -12,6 +12,7 @@ class User(db.Model):
     brutal_mode = db.Column(db.Boolean, default=False)
     brutal_messages = db.Column(db.Text)
     last_acknowledged_time = db.Column(db.DateTime, default=datetime.utcnow)
+    channel = db.Column(db.String(16), default='whatsapp')
 
     def get_messages(self):
         return json.loads(self.messages)
@@ -25,4 +26,9 @@ class User(db.Model):
         return []
 
     def set_brutal_messages(self, messages_list):
-        self.brutal_messages = json.dumps(messages_list) 
+        self.brutal_messages = json.dumps(messages_list)
+
+class BrutalWaitlist(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), nullable=False)
+    phone = db.Column(db.String(20)) 

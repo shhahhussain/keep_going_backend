@@ -7,7 +7,7 @@ from_number = os.getenv('TWILIO_FROM_NUMBER')
 
 client = Client(account_sid, auth_token)
 
-def send_sms(to_number, message):
+def send_sms_message(to_number, message):
     client.messages.create(
         body=message,
         from_=from_number,
